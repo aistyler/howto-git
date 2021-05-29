@@ -2,6 +2,18 @@
 
 Git usage Alpha to Omega
 
+## Overview
+
+- git repository는 다음과 같은 데이터 구조로 구성된다.
+  - repository > branch > revision
+- `git-checkout`은 
+  - 명시된 branch로 working branch를 설정한다.
+  - 이 때, .git/HEAD 값을 working branch로 변경한다.
+- `git-commit`은 
+  - 새로운 revision을 생성하고 
+  - 생성된 revision의 SHA-1 값을 working branch의 reference 값을 으로 변경한다.
+  - e.g. .git/HEAD가 refs/heads/main 일 때, .git/refs/heads/main을 해당 SHA-1 값으로 갱신한다.
+
 ## Git Internal References
 
 - references(refs): alias of raw SHA-1 value (something like 'ec9103f573377420afabafc09a714aa406b3493d')
@@ -11,13 +23,13 @@ Git usage Alpha to Omega
 $ find .git/refs -type f
 .git/refs/heads/branch-1
 .git/refs/heads/main
-.git/refs/tags/v1.0.1
+.git/refs/tags/v1.0.0
 .git/refs/remotes/origin/branch-1
 .git/refs/remotes/origin/HEAD
 .git/refs/remotes/origin/main
 ```
 
-- HEAD: ref of last commit
+- HEAD: ref of branch checked out
 
 ```sh
 $ cat .git/HEAD
