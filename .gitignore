@@ -1,0 +1,5 @@
+# .gitignore
+
+# exclude working dir
+working/*
+!.gitkeep
