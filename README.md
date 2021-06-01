@@ -45,8 +45,8 @@ $ cat .git/FETCH_HEAD
 
 ## Revisions
 
-- ~(tilde): ${rev}~${n}, e.g. master~1
-- ^(caret): ${rev}^${n}, e.g. master^1
+- `~(tilde)`: `${rev}~${n}`, e.g. master~1
+- `^(caret)`: `${rev}^${n}`, e.g. master^1
 
 ```txt
        A      <= HEAD
